@@ -49,13 +49,11 @@ module Forkout
 
     items.each do |item|
       @tuple_space.write [input, item]
-      puts "put: #{item}"
     end
     
     while results.length != items.length
       result = @tuple_space.take([output, nil])[1]
       results << result
-      puts "collected: #{result}"
     end
 
     pids.each do |pid|
