@@ -13,16 +13,16 @@ require 'rake/testtask'
 spec = Gem::Specification.new do |s|
   s.name = 'forkout'
   s.version = '0.0.1'
-  s.has_rdoc = true
+  s.has_rdoc = false
   s.extra_rdoc_files = ['README', 'LICENSE']
-  s.summary = 'Your summary here'
+  s.summary = 'forks a block'
   s.description = s.summary
-  s.author = ''
+  s.author = 'Szczyp'
   s.email = ''
   # s.executables = ['your_executable_here']
   s.files = %w(LICENSE README Rakefile) + Dir.glob("{bin,lib,spec}/**/*")
   s.require_path = "lib"
-  s.bindir = "bin"
+  s.platform = Gem::Platform::RUBY
 end
 
 Rake::GemPackageTask.new(spec) do |p|
