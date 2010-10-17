@@ -5,11 +5,11 @@ module Forkout
   extend self
 
   def start
-    DRb.start_service
+    @service = DRb.start_service
 
     @tuple_space = Rinda::TupleSpace.new 1
 
-    Rinda::RingServer.new @tuple_space
+    @server = Rinda::RingServer.new @tuple_space
 
     @counter = 0
 
